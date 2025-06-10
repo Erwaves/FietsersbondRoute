@@ -1,8 +1,23 @@
-const map = L.map("map").setView([52.15, 5.39], 12);
+const osmLayer = L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution: "© OpenStreetMap contributors",
+  }
+);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "© OpenStreetMap contributors",
-}).addTo(map);
+const satelliteLayer = L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  {
+    attribution: "Tiles © Esri",
+  }
+);
+
+// Initialize map with OSM layer
+const map = L.map("map", {
+  center: [52.15, 5.39],
+  zoom: 12,
+  layers: [osmLayer], // start with OSM
+});
 
 const redIcon = new L.Icon({
   iconUrl:
@@ -90,3 +105,58 @@ fetch("route.gpx")
       });
     }
   });
+
+// Create a control with two buttons
+const layerToggleControl = L.Control.extend({
+  onAdd: function (map) {
+    const container = L.DomUtil.create("div", "layer-toggle-container");
+
+    // OSM button
+    const osmBtn = L.DomUtil.create(
+      "button",
+      "layer-toggle-btn active",
+      container
+    );
+    osmBtn.textContent = "Kaart";
+
+    // Satellite button
+    const satBtn = L.DomUtil.create("button", "layer-toggle-btn", container);
+    satBtn.textContent = "Satellite";
+
+    function setActiveButton(activeBtn) {
+      if (activeBtn === osmBtn) {
+        osmBtn.classList.add("active");
+        satBtn.classList.remove("active");
+        if (!map.hasLayer(osmLayer)) {
+          map.addLayer(osmLayer);
+        }
+        if (map.hasLayer(satelliteLayer)) {
+          map.removeLayer(satelliteLayer);
+        }
+      } else {
+        satBtn.classList.add("active");
+        osmBtn.classList.remove("active");
+        if (!map.hasLayer(satelliteLayer)) {
+          map.addLayer(satelliteLayer);
+        }
+        if (map.hasLayer(osmLayer)) {
+          map.removeLayer(osmLayer);
+        }
+      }
+    }
+
+    osmBtn.onclick = () => setActiveButton(osmBtn);
+    satBtn.onclick = () => setActiveButton(satBtn);
+
+    // Prevent map interaction when clicking buttons
+    L.DomEvent.disableClickPropagation(container);
+
+    return container;
+  },
+  onRemove: function (map) {
+    // Nothing special here
+  },
+});
+
+// Add the toggle control to top right
+map.addControl(new layerToggleControl({ position: "topright" }));
