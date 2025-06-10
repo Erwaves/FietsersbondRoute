@@ -1,6 +1,6 @@
 /* Bestaande styles */
 body {
-  margin: 1rem;
+  margin: 1rem 2rem;
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center; /* horizontaal centreren */
@@ -25,28 +25,63 @@ body {
   border-radius: 12px;
 }
 
+/* Info box styles */
 .info-box {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(#24468f, #271f75);
+  color: white;
+  padding: 25px 40px 25px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  max-width: 90vw;
+  width: 380px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  z-index: 1100;
+  display: none; /* standaard verborgen */
+  user-select: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.info-box.visible {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.info-box.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  pointer-events: none;
+}
+
+.info-box .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  z-index: 1000;
+  top: 12px;
+  right: 15px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+}
+
+.info-box .close-btn:hover {
+  color: white;
 }
 
 /* Nieuwe mobile responsive styles */
 @media (max-width: 600px) {
   .info-box {
-    top: auto;
-    bottom: 10px;
-    right: 10px;
-    left: 10px;
-    max-width: none;
-    font-size: 14px;
-    padding: 12px;
+    width: 85%;
+    padding: 20px 35px 20px 20px;
+    font-size: 1rem;
   }
 
   #map {

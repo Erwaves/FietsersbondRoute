@@ -6,7 +6,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const redIcon = new L.Icon({
   iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -15,6 +15,23 @@ const redIcon = new L.Icon({
 });
 
 const infoBox = document.getElementById("infoBox");
+const closeBtn = document.getElementById("closeBtn");
+
+// Sluit knop event
+closeBtn.addEventListener("click", () => {
+  infoBox.classList.remove("visible");
+});
+
+// Functie om infoBox te tonen met tekst
+function showInfoBox(htmlContent) {
+  infoBox.innerHTML = `<span class="close-btn" id="closeBtn">&times;</span>${htmlContent}`;
+  infoBox.classList.add("visible");
+
+  // Herbind close event (want we vervangen innerHTML)
+  document.getElementById("closeBtn").addEventListener("click", () => {
+    infoBox.classList.remove("visible");
+  });
+}
 
 // GPX route inladen
 const gpx = new L.GPX("route.gpx", {
@@ -43,9 +60,6 @@ const gpx = new L.GPX("route.gpx", {
     const routeLine = findPolyline(e.target);
     console.log("Gevonden polyline:", routeLine);
     if (!routeLine) return;
-
-    // Voeg richtingspijlen toe langs de route
-    addDirectionArrows(routeLine);
   })
   .addTo(map);
 
@@ -66,9 +80,9 @@ fetch("route.gpx")
       const desc = wpt.getElementsByTagName("desc")[0]?.textContent || "";
 
       const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
-      marker.bindPopup(`<strong>${name}</strong><br>${desc}`);
       marker.on("click", () => {
-        infoBox.innerHTML = `<strong>${name}</strong><br>${desc}`;
+        showInfoBox(`<strong>${name}</strong><br>${desc}`);
+        map.setView([lat, lon], 15, { animate: true });
       });
     }
   });
