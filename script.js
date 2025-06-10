@@ -6,7 +6,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const redIcon = new L.Icon({
   iconUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -23,8 +23,12 @@ closeBtn.addEventListener("click", () => {
 });
 
 // Functie om infoBox te tonen met tekst
-function showInfoBox(htmlContent) {
-  infoBox.innerHTML = `<span class="close-btn" id="closeBtn">&times;</span>${htmlContent}`;
+function showInfoBox(title, content) {
+  infoBox.innerHTML = `
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <div class="info-header">${title}</div>
+    <div class="info-body">${content}</div>
+  `;
   infoBox.classList.add("visible");
 
   // Herbind close event (want we vervangen innerHTML)
@@ -81,7 +85,7 @@ fetch("route.gpx")
 
       const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
       marker.on("click", () => {
-        showInfoBox(`<strong>${name}</strong><br>${desc}`);
+        showInfoBox(name, desc);
         map.setView([lat, lon], 15, { animate: true });
       });
     }
