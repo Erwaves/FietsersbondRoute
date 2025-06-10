@@ -38,26 +38,26 @@
   <link href="https://www.strava.com/routes/3362735550542386234"/>
  </metadata>
  <wpt lat="52.15867" lon="5.38095">
-  <name>Eemplein (Piet)</name>
+  <name>START - Eemplein (Piet)</name>
   <desc>Eemplein</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.15368" lon="5.38212">
   <name>Snouckaertlaan (Piet)</name>
-  <desc>Snouckaertlaan</desc>
+  <desc>Snouckaertlaan, nieuwe fietsstraat. Maar deze komt uit op niets? Op een 2baans 1richting autoweg.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.14942" lon="5.38409">
-  <name>Nieuwe Mos (Eten)</name>
-  <desc></desc>
+  <name>Nieuwe Mos</name>
+  <desc>Eten halen!</desc>
   <sym>Grocery</sym>
   <type>Grocery</type>
  </wpt>
  <wpt lat="52.14538" lon="5.38188">
   <name>Leusderweg Vanaf Plus (Charlotte)</name>
-  <desc></desc>
+  <desc>Losse Tegels. Parkeren op Fietspad. Drukke rotonde. Gek kruispunt met Kersenbaan. Landingsbaan richting de AH.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
@@ -81,31 +81,31 @@
  </wpt>
  <wpt lat="52.15019" lon="5.35393">
   <name>BW-Laan - Kazerne (Piet)</name>
-  <desc>Barchman Wuytierslaan / Kazerne</desc>
+  <desc>Barchman Wuytierslaan / Kazerne. Nieuwe situatie.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.15074" lon="5.35325">
   <name>Snelfietspad &amp; Hoe naar Dierenpark? (Erwin)</name>
-  <desc>Snelfietspad &amp; Hoe naar Dierenpark?</desc>
+  <desc>Snelfietspad (uit de voorrang) &amp; Hoe naar Dierenpark? 2 keer oversteken met je kinderen naar een fietspad met losse tegels.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.15101" lon="5.32363">
   <name>Rust en Eetpunt</name>
-  <desc></desc>
+  <desc>Lekker in de Korte Duinen.</desc>
   <sym>Rest Area</sym>
   <type>Rest Area</type>
  </wpt>
  <wpt lat="52.16018" lon="5.36403">
   <name>Noordewierweg</name>
-  <desc></desc>
+  <desc>Herinrichting.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.16636" lon="5.37509">
   <name>Wachten op de dood (Erwin)</name>
-  <desc></desc>
+  <desc>Oversteken richting De Stuw sta je te wachten waar auto's recht op je af komen (rijden in een bocht). Potentiele dood. Blokken zouden fietser en voetganger moeten beschermen</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
@@ -117,43 +117,43 @@
  </wpt>
  <wpt lat="52.17493" lon="5.39051">
   <name>Voorrangssituatie &amp; Glad in Bocht Bord (Erwin)</name>
-  <desc></desc>
+  <desc>Drukke fietsroute uit de voorrang ten gunste voor wie?? Einde wijk voor de automobilist. Ook staat er al jaren een bord met 'pas op glad in de bocht'. Doe er dan wat aan?</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.17396" lon="5.40674">
   <name>Hoefseweg (Erwin)</name>
-  <desc></desc>
+  <desc>Snelfietsroute uit de voorrang, voor een doodlopende autoweg? Heel gek.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.17158" lon="5.40378">
   <name>Gekke Voorrang (Erwin)</name>
-  <desc></desc>
+  <desc>De drukste gebruikte route zit niet in de voorrang. Toetsenbordpad - Jan van Rietbeeckpad</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.16599" lon="5.393">
   <name>Moet dit breder? (Erwin)</name>
-  <desc></desc>
+  <desc>Druk fietspad, en voetgangers hebben geen ruimte en waar ze ruimte hebben staan palen in de weg. Deze gebruiken dus ook het fietspad.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.16287" lon="5.39648">
   <name>50km/u!? (Erwin)</name>
-  <desc></desc>
+  <desc>Hier mag je 50km/u, maar zou niet moeten.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.15517" lon="5.39503">
   <name>Gek FietsVoetpad (Charlotte)</name>
-  <desc>Gek Fiets/Voetpad</desc>
+  <desc>Gek Fiets/Voetpad op de brug. Hier kunnen we afsnijden en afronden of het loopje Randenbroek nog doen.</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.14893" lon="5.39197">
   <name>Vermeerstraat (Piet)</name>
-  <desc>Vermeerstraat</desc>
+  <desc>Vermeerstraat fietsstraat</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
@@ -165,13 +165,13 @@
  </wpt>
  <wpt lat="52.1523" lon="5.40802">
   <name>Huh? (Erwin)</name>
-  <desc></desc>
+  <desc>Waar ben ik? Waar moet ik heen? Waar is het fietspad?</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>
  <wpt lat="52.15426" lon="5.38746">
-  <name>Finish!</name>
-  <desc></desc>
+  <name>FINISH!</name>
+  <desc>Varkensmarkt</desc>
   <sym>Alert</sym>
   <type>Alert</type>
  </wpt>

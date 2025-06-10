@@ -16,8 +16,8 @@ const redIcon = new L.Icon({
 
 const infoBox = document.getElementById("infoBox");
 
-// Route tekenen zonder markers
-const gpxRoute = new L.GPX("route.gpx", {
+// GPX route inladen
+const gpx = new L.GPX("route.gpx", {
   async: true,
   marker_options: {
     startIconUrl: null,
@@ -27,10 +27,29 @@ const gpxRoute = new L.GPX("route.gpx", {
 })
   .on("loaded", function (e) {
     map.fitBounds(e.target.getBounds());
+
+    function findPolyline(layerGroup) {
+      let polyline = null;
+      layerGroup.eachLayer((layer) => {
+        if (layer instanceof L.Polyline) {
+          polyline = layer;
+        } else if (layer.getLayers) {
+          polyline = findPolyline(layer);
+        }
+      });
+      return polyline;
+    }
+
+    const routeLine = findPolyline(e.target);
+    console.log("Gevonden polyline:", routeLine);
+    if (!routeLine) return;
+
+    // Voeg richtingspijlen toe langs de route
+    addDirectionArrows(routeLine);
   })
   .addTo(map);
 
-// Waypoints handmatig parsen en custom markers toevoegen
+// Waypoints toevoegen uit GPX
 fetch("route.gpx")
   .then((res) => res.text())
   .then((gpxText) => {
