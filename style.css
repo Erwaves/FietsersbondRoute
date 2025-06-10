@@ -13,6 +13,7 @@ body {
   width: 100%;
   max-width: 900px; /* max breedte */
   height: 100vh; /* volle hoogte scherm */
+  margin: 0 auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
@@ -28,21 +29,22 @@ body {
 /* Info box styles */
 .info-box {
   position: fixed;
-  bottom: 30px;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(#24468f, #271f75);
+  background: #0d531f;
   color: white;
-  padding: 25px 40px 25px 25px;
-  border-radius: 16px;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-  max-width: 90vw;
-  width: 380px;
+  box-sizing: border-box;
+  max-width: 500px;
+  width: 90%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4;
-  z-index: 1100;
+  z-index: 9999;
   display: none; /* standaard verborgen */
   user-select: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -62,7 +64,7 @@ body {
 
 .info-box .close-btn {
   position: absolute;
-  top: 12px;
+  top: 10px;
   right: 15px;
   font-weight: bold;
   font-size: 1.4rem;
@@ -79,9 +81,9 @@ body {
 /* Nieuwe mobile responsive styles */
 @media (max-width: 600px) {
   .info-box {
-    width: 85%;
-    padding: 20px 35px 20px 20px;
-    font-size: 1rem;
+    max-width: 90vw;
+    padding: 1rem;
+    font-size: 0.95rem;
   }
 
   #map {
