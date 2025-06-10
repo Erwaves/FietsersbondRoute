@@ -12,14 +12,14 @@ body {
   display: flex;
   justify-content: center; /* horizontaal centreren */
   align-items: center; /* verticaal centreren als je wilt */
-  height: 100%;
+  height: 95%;
   background: #f5f5f5;
   overflow: hidden;
 }
 
 .map-container {
   width: 100%;
-  max-width: 900px; /* max breedte */
+  max-width: 95%; /* max breedte */
   height: 100%; /* volle hoogte scherm */
   margin: 0 auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
