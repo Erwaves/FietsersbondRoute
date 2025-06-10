@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  height: 100vh;
+}
+
+.info-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 1000;
+}
